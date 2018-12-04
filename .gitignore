@@ -1,0 +1,12 @@
+.idea/
+.buildpath
+.project
+.settings/
+*.log
+*.pid
+public/xhprof_html/*
+public/xhprof_lib/*
+ssl
+application/data/pid
+application/data/log
+.DS_Store

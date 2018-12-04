@@ -1,0 +1,29 @@
+{
+    "name": "0x20h/phloppy",
+    "description": "A PHP client for Disque",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Kohlhof",
+            "email": "kohj@informatik.uni-marburg.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "psr/log": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "monolog/monolog": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phloppy\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Phloppy\\": ["tests/integration", "tests/unit"]
+        }
+    }
+}

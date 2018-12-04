@@ -1,0 +1,40 @@
+language: php
+
+sudo: false
+
+php:
+    - 5.5
+    - 5.6
+    - 7
+    - hhvm
+    - nightly
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+before_install:
+    - composer self-update
+
+install:
+  - composer install --no-interaction --prefer-source
+
+before_script:
+    - git clone https://github.com/antirez/disque.git
+    - cd disque
+    - make --silent
+    - src/disque-server &
+    - cd ..
+
+matrix:
+    allow_failures:
+        - php: nightly
+
+script:
+    - ./vendor/bin/phpunit --coverage-clover=coverage.clover
+
+after_script:
+    - cat logs/tests.log
+
+after_success:
+    - ./scripts/scrutinizer

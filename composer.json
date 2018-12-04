@@ -1,0 +1,10 @@
+{
+    "require": {
+        "lcobucci/jwt": "^3.2.2",
+        "mtdowling/cron-expression": "^1.2.1",
+        "qiniu/php-sdk": "^7.2.6",
+        "phpoffice/phpexcel": "^1.8",
+        "0x20h/phloppy": "^0.1.1",
+        "elasticsearch/elasticsearch": "^6.0"
+    }
+}
